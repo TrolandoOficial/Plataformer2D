@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - caixa
+  - arma
+  - coletavel
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - ground
+  - interacao
+  - inimigo
+  - coletavel
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 1326742333
+    locked: 0
+  - name: Paredes
+    uniqueID: 2444772799
+    locked: 0
+  - name: Decoracao Objetos
+    uniqueID: 665578445
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Plataformas
+    uniqueID: 925339685
+    locked: 0
+  - name: Decoracao Primeiro Plano
+    uniqueID: 1396445121
+    locked: 0
+  - name: HUD
+    uniqueID: 2309946525
+    locked: 0
