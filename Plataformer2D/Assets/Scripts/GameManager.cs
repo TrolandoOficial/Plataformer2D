@@ -11,6 +11,14 @@ public class GameManager : MonoBehaviour
     public int gold;
     public TextMeshProUGUI goldTXT;
 
+    private fade fade;
+
+    private void Start()
+    {
+        fade = FindObjectOfType(typeof(fade)) as fade;
+        fade.FadeOut();
+    }
+
     private void Update()
     {
         goldTXT.text = gold.ToString("N0");

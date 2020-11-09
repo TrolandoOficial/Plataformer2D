@@ -8,6 +8,7 @@ public class playerScript : MonoBehaviour
 
     private Animator playerAnimator;
     private Rigidbody2D playerRB;
+    private SpriteRenderer sRenderPlayer;
 
     public Transform groundCheck;
     public Transform hand;
@@ -38,6 +39,7 @@ public class playerScript : MonoBehaviour
         _GameManager = FindObjectOfType(typeof(GameManager)) as GameManager;
         playerAnimator = GetComponent<Animator>();
         playerRB = GetComponent<Rigidbody2D>();
+        sRenderPlayer = GetComponent<SpriteRenderer>();
 
         playerCurrentHP = playerMaxHP;
 
@@ -66,7 +68,10 @@ public class playerScript : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && v >= 0 && !isAttacking && objetoInteracao == null) playerAnimator.SetTrigger("attack");
 
-        if (Input.GetButtonDown("Fire1") && v >= 0 && !isAttacking && objetoInteracao != null) objetoInteracao.SendMessage("Interacao", SendMessageOptions.DontRequireReceiver);
+        if (Input.GetButtonDown("Fire1") && v >= 0 && !isAttacking && objetoInteracao != null)
+        {
+            objetoInteracao.SendMessage("Interacao", SendMessageOptions.DontRequireReceiver);
+        }
 
         if (Input.GetButtonDown("Jump") && isGrounded && !isAttacking) playerRB.AddForce(new Vector2(0, jumpForce));
 
@@ -160,6 +165,15 @@ public class playerScript : MonoBehaviour
             case "coletavel":
                 collider.gameObject.SendMessage("Coletar", SendMessageOptions.DontRequireReceiver);
                 break;
+        }
+    }
+
+    public void ChangeMaterial(Material novoMaterial) 
+    {
+        sRenderPlayer.material = novoMaterial;
+        foreach (GameObject o in armas)
+        {
+            o.GetComponent<SpriteRenderer>().material = novoMaterial;
         }
     }
 
